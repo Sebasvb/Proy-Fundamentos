@@ -1,0 +1,35 @@
+# Publish all joint states -----------------------------------
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+
+arm_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+     - waist_q1
+     - shoulder_q2
+     - slider_q3
+     - elbow_q4
+     - revolution_q5
+     - wrist_q6
+  constraints:
+      goal_time: 0.6
+      stopped_velocity_tolerance: 0.05
+      waist_q1: {trajectory: 0.1, goal: 0.1}
+      shoulder_q2: {trajectory: 0.1, goal: 0.1}
+      slider_q3: {trajectory: 0.1, goal: 0.1}
+      elbow_q4: {trajectory: 0.1, goal: 0.1}
+      revolution_q5: {trajectory: 0.1, goal: 0.1}
+      wrist_q6: {trajectory: 0.1, goal: 0.1}
+  stop_trajectory_duration: 0.5
+  state_publish_rate:  25
+  action_monitor_rate: 10
+joint_group_position_controller:
+  type: position_controllers/JointGroupPositionController
+  joints:
+     - waist_q1
+     - shoulder_q2
+     - slider_q3
+     - elbow_q4
+     - revolution_q5
+     - wrist_q6

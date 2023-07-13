@@ -1,0 +1,7 @@
+gazebo_ros_control/pid_gains:
+  waist_q1: {p: 0.1, i: 0.0, d: 0.0}
+  shoulder_q2: {p: 50, i: 0.0, d: 0.0}
+  slider_q3: {p: 0.1, i: 0.0, d: 0.0}
+  elbow_q4: {p: 0.1, i: 0.0, d: 0.0}
+  revolution_q5: {p: 0.1, i: 0.0, d: 0.0}
+  wrist_q6: {p: 0.1, i: 0.0, d: 0.0}

@@ -1,0 +1,29 @@
+digraph G {
+node [shape=box];
+"world" [label="world"];
+"base_link" [label="base_link"];
+"eje" [label="eje"];
+"q1_1" [label="q1_1"];
+"q2_1" [label="q2_1"];
+"q3_1" [label="q3_1"];
+"q4_1" [label="q4_1"];
+"q5_1" [label="q5_1"];
+"q6_1" [label="q6_1"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"world" -> "world_joint" [label="xyz: 0 0 -1 \nrpy: 0 -0 0"]
+"world_joint" -> "base_link"
+"base_link" -> "Rigida" [label="xyz: 0 0 0.7 \nrpy: 0 -0 0"]
+"Rigida" -> "eje"
+"eje" -> "waist_q1" [label="xyz: 0 0 0.131338 \nrpy: 0 -0 0"]
+"waist_q1" -> "q1_1"
+"q1_1" -> "shoulder_q2" [label="xyz: 0 0 0.3 \nrpy: 0 -0 0"]
+"shoulder_q2" -> "q2_1"
+"q2_1" -> "slider_q3" [label="xyz: 0 1 0 \nrpy: 0 -0 0"]
+"slider_q3" -> "q3_1"
+"q3_1" -> "elbow_q4" [label="xyz: -0.86 2.94 -0 \nrpy: 0 -0 0"]
+"elbow_q4" -> "q4_1"
+"q4_1" -> "revolution_q5" [label="xyz: 0 1.535 0 \nrpy: 0 -0 0"]
+"revolution_q5" -> "q5_1"
+"q5_1" -> "wrist_q6" [label="xyz: 0 2.335 0 \nrpy: 0 -0 0"]
+"wrist_q6" -> "q6_1"
+}
